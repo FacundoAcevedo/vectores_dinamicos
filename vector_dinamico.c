@@ -74,14 +74,7 @@ vector_t* vector_crear(size_t tam)
 // Post: se eliminaron todos los elementos del vector
 void vector_destruir(vector_t *vector)
 {
-    int indice;
-
-    for (indice = 0; indice <= sizeof(vector)/sizeof(int); indice++)
-    {
-        free(&vector[indice]);
-
-    }
-    
+    free(vector);
 }
 
 
@@ -110,6 +103,11 @@ bool vector_redimensionar(vector_t *vector, size_t tam_nuevo)
 // posición es inválida (fuera del rango del vector, que va de 0 a tamaño-1)
 bool vector_obtener(vector_t *vector, size_t pos, int *valor)
 {
+    if (pos >= 0 && pos < (vector->tam))
+        {
+            *valor = *vector[pos].datos;
+        }
+
 
     return false;
 }
@@ -121,6 +119,11 @@ bool vector_obtener(vector_t *vector, size_t pos, int *valor)
 // se guardó el valor con éxito.
 bool vector_guardar(vector_t *vector, size_t pos, int valor)
 {
+    if (pos >= 0 &&  pos < (vector->tam))
+        {
+          *vector[pos].datos = valor;
+        }
+
     return false;
 }
 
@@ -128,7 +131,7 @@ bool vector_guardar(vector_t *vector, size_t pos, int valor)
 // Pre: el vector fue creado
 size_t vector_obtener_tamanio(vector_t *vector)
 {
-    return 0;
+    return vector->tam;
 }
 
 
