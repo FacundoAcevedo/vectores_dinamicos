@@ -1,0 +1,27 @@
+ Vector Dinámico
+
+Adjunto a esta página encontrarán el código que se debe completar para 
+la realización del tipo de dato Vector dinámico. Las primitivas que
+ tienen que completar son las siguientes:
+
+    vector_destruir
+    vector_obtener
+    vector_guardar
+    vector_obtener_tamanio
+
+La implementación debe respetar los lineamientos de la documentación y 
+tal como lo hicieron con el tp0 deben lograr pasar todas las pruebas 
+con OK.
+
+Las siguientes primitivas ya están implementadas:
+
+    vector_crear
+    vector_redimensionar
+
+Esta vez la entrega es grupal y para el lunes 3 de Septiembre.
+ Deben entregar una hoja de papel, con el nombre y padrón de los 
+ integrantes del grupo imprimiendo únicamente las 4 funciones mencionadas.
+
+Además, deben enviar por mail el archivo vector_dinamico.c completo a
+tps.7541rw@gmail.com. 
+En el asunto deben indicar: VD - Padron1 - Apellido1 - Padron2 - Apellido2
