@@ -74,6 +74,14 @@ vector_t* vector_crear(size_t tam)
 // Post: se eliminaron todos los elementos del vector
 void vector_destruir(vector_t *vector)
 {
+    //free(vector);
+    int indice;
+
+    for (indice = 0; indice < vector->tam; indice++)
+    {
+        free(vector[indice].datos);
+        
+    }
     free(vector);
 }
 
