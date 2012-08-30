@@ -121,6 +121,8 @@ bool vector_guardar(vector_t *vector, size_t pos, int valor)
 {
     if (pos >= 0 &&  pos < (vector->tam))
         {
+            vector[pos].datos = malloc(vector->tam * sizeof(int));
+
 
             *vector[pos].datos = valor;
             return true;
