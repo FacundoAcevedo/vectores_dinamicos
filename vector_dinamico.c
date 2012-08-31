@@ -75,15 +75,25 @@ vector_t* vector_crear(size_t tam)
 void vector_destruir(vector_t *vector)
 {
     //free(vector);
-    int indice;
+    int indice = 0;
 
-    for (indice = 0; indice < vector->tam; indice++)
+    if (vector->tam == 0)
     {
-        free(vector[indice].datos);
-        
+        free(vector);
     }
-    free(vector);
+    else
+    {
+
+        
+        for (indice = 0; indice < (vector->tam); indice++)
+        {
+            //Libero la memoria de cada elemento
+            free(vector[indice].datos);
+        }
+       // free(vector);//Si libero esto, explota!
+    }
 }
+
 
 
 // Cambia el tamaño del vector
