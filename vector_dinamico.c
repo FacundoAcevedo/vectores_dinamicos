@@ -106,9 +106,9 @@ bool vector_redimensionar(vector_t *vector, size_t tam_nuevo)
 bool vector_obtener(vector_t *vector, size_t pos, int *valor)
 {
     if (pos >= 0 && pos < (vector->tam))
-        {
-            *valor = *vector[pos].datos;
-        }
+    {
+        *valor = *vector[pos].datos;
+    }
 
 
     return false;
