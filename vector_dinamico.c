@@ -107,7 +107,9 @@ bool vector_obtener(vector_t *vector, size_t pos, int *valor)
 {
     if (pos >= 0 && pos < (vector->tam))
     {
-        *valor = *vector[pos].datos;
+        int *p;
+        p = (vector->datos + (pos * sizeof(int)));
+        *valor = *p;
     }
 
 
@@ -123,11 +125,9 @@ bool vector_guardar(vector_t *vector, size_t pos, int valor)
 {
     if (pos >= 0 &&  pos < (vector->tam))
         {
-            //Le doy tamaño a la posicion donde voy a escribir
-            vector[pos].datos = malloc(vector->tam * sizeof(int)); 
-
-
-            *vector[pos].datos = valor;
+            int *p;
+            p = (vector->datos + (pos * sizeof(int)));
+            *p = valor;
             return true;
         }
 
