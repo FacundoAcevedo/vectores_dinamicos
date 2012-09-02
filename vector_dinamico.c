@@ -105,10 +105,10 @@ bool vector_redimensionar(vector_t *vector, size_t tam_nuevo)
 // posición es inválida (fuera del rango del vector, que va de 0 a tamaño-1)
 bool vector_obtener(vector_t *vector, size_t pos, int *valor)
 {
-    if (pos >= 0 && pos < (vector->tam))
+    if (pos >= 0 && pos < (vector->tam)) //Verifico que sea una posicion valida.
     {
         int *p;
-        p = (vector->datos + (pos * sizeof(int)));
+        p = (vector->datos + pos);
         *valor = *p;
     }
 
@@ -126,7 +126,7 @@ bool vector_guardar(vector_t *vector, size_t pos, int valor)
     if (pos >= 0 &&  pos < (vector->tam))
         {
             int *p;
-            p = (vector->datos + (pos * sizeof(int)));
+            p = (vector->datos + pos);
             *p = valor;
             return true;
         }
